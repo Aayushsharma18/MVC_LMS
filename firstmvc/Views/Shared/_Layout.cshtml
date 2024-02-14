@@ -4,10 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - firstmvc</title>
+    <title>@ViewData["Title"] - Library</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/carousel.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/firstmvc.styles.css" asp-append-version="true" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -29,8 +33,15 @@
                                 asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="HelloWorld">HelloWorld</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="Index"><b>Books
+                                    Collection</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking"
+                                asp-action="Index"><b>Show Bookings</b></a>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +56,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - firstmvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Narmad Library - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

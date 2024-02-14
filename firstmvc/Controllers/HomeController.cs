@@ -4,6 +4,7 @@ using firstmvc.Models;
 
 namespace firstmvc.Controllers;
 
+// [Route("[controller]/[action]")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -23,16 +24,16 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult HelloWorld()
+    public IActionResult About()
     {
         var str = "Hello world message";
-        return View("HElloWorld", str);
+        return View("About", str);
     }
 
-    public IActionResult CAll()
+    public IActionResult Contact()
     {
-        var str = "This is call action method.";
-        return View("Call",str);
+        var str = "This is contact action method.";
+        return View("Contact", str);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

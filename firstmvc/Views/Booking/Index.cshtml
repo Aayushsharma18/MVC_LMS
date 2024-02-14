@@ -1,5 +1,61 @@
+@model IEnumerable<BorrowedBook>
 @{
     ViewData["Title"] = "Index";
 }
 
-<b>Booking Index page</b>
+<h4>Bookings</h4>
+
+<p>
+    <a asp-controller="Books" asp-action="AddOrEdit" asp-route-itemid="">Add New Book</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BorrowedId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BorrowDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnDate)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.BorrowedId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.BookId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.BorrowDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.ReturnDate)
+                </td>
+                <td>
+                    <a class="text-dark" asp-action="getBorrowedBook" asp-route-id="@student.BorrowedId">Edit</a> |
+                    <a class="text-dark" asp-action="DeleteStudent" asp-route-id="@student.BorrowedId" onclick="return
+                confirmAndDelete(@student.BorrowedId);">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
